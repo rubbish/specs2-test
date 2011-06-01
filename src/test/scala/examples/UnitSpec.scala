@@ -8,8 +8,9 @@ import org.specs2.mutable._
  * This specification shows how to use the mutable.Specification trait to create a unit Specification
  * where the fragments are built using a mutable variable
  */
-class UnitSpec extends Specification {
-
+class UnitSpec extends Specification with org.specs2.mutable.Tags {
+  section("slow")
+  
   // A title can be added at the beginning of the specification
   "MutableSpec".title
   // arguments are simply declared at the beginning of the specification if needed

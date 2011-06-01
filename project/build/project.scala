@@ -21,7 +21,8 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
   
   def specs2Framework = new TestFramework("org.specs2.runner.SpecsFramework")
   override def testFrameworks = super.testFrameworks ++ Seq(specs2Framework)
-
+  override def testOptions = super.testOptions ++ Seq(TestArgument("exclude", "slow"))
+  
   val snapshotsRepo = "snapshots-repo" at "http://scala-tools.org/repo-snapshots"
 
 }
